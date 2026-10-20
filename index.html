@@ -397,6 +397,59 @@
       color: var(--muted);
     }
 
+    /* ── CERTIFICATIONS ── */
+    #certs { background: var(--surface); }
+    
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .cert-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .cert-card:hover { border-color: rgba(94,234,212,0.3); transform: translateY(-4px); }
+    .cert-card.in-progress:hover { border-color: rgba(129,140,248,0.4); }
+    
+    .cert-status {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      background: rgba(94,234,212,0.08);
+      color: var(--accent);
+      border: 1px solid rgba(94,234,212,0.2);
+    }
+    .cert-card.in-progress .cert-status {
+      background: rgba(129,140,248,0.08);
+      color: var(--accent2);
+      border-color: rgba(129,140,248,0.2);
+    }
+    
+    .cert-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    .cert-issuer { font-size: 0.85rem; color: var(--accent); margin-bottom: 0.75rem; }
+    .cert-desc { color: var(--muted); font-size: 0.9rem; font-weight: 300; line-height: 1.6; }
+    .cert-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
     /* ── CONTACT ── */
     #contact { background: var(--surface); text-align: center; }
 
@@ -452,6 +505,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#certs">Certifications</a><li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -513,7 +567,7 @@
             <div class="stat-label">Increase in assignment completion rates</div>
           </div>
           <div class="stat-card">
-            <div class="stat-num">Dec<br><span style="font-size:1.2rem">2026</span></div>
+            <div class="stat-num">May<br><span style="font-size:1.2rem">2027</span></div>
             <div class="stat-label">Expected graduation — UCSC B.S. CS</div>
           </div>
         </div>
@@ -702,11 +756,49 @@
 
   <div class="divider"></div>
 
+<!-- CERTIFICATIONS -->
+  <section id="certs">
+    <div class="max-w">
+      <p class="section-label">05 / Certifications</p>
+      <h2 class="section-title">Credentials</h2>
+      <p class="section-sub">Industry certifications I've earned and the ones I'm working toward.</p>
+  
+      <div class="certs-grid">
+  
+        <div class="cert-card">
+          <span class="cert-status">✓ Earned</span>
+          <div class="cert-name">CompTIA A+</div>
+          <div class="cert-issuer">CompTIA</div>
+          <p class="cert-desc">Hardware, operating systems, networking basics, mobile devices, and troubleshooting.</p>
+          <p class="cert-meta">Earned: Month YYYY</p>
+        </div>
+  
+        <div class="cert-card in-progress">
+          <span class="cert-status">In Progress</span>
+          <div class="cert-name">CompTIA Network+</div>
+          <div class="cert-issuer">CompTIA</div>
+          <p class="cert-desc">Network architecture, protocols and ports, routing and switching, and troubleshooting.</p>
+          <p class="cert-meta">Expected: Month YYYY</p>
+        </div>
+  
+        <div class="cert-card in-progress">
+          <span class="cert-status">In Progress</span>
+          <div class="cert-name">CompTIA Security+</div>
+          <div class="cert-issuer">CompTIA</div>
+          <p class="cert-desc">Threats and vulnerabilities, cryptography, identity and access management, and risk management.</p>
+          <p class="cert-meta">Expected: Month YYYY</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="max-w">
       <div class="contact-card">
-        <p class="section-label" style="text-align:center">05 / Contact</p>
+        <p class="section-label" style="text-align:center">06 / Contact</p>
         <h2 class="section-title">Let's connect</h2>
         <p style="color:var(--muted); font-weight:300; margin-top:0.5rem;">
           I'm actively looking for SWE internships and new grad roles. If you're hiring or want to chat, feel free to reach out.
