@@ -412,6 +412,9 @@
       border-radius: 12px;
       padding: 1.75rem;
       transition: border-color 0.25s, transform 0.25s;
+      display: block;
+      text-decoration: none;
+      color: inherit;
     }
     .cert-card:hover { border-color: rgba(94,234,212,0.3); transform: translateY(-4px); }
     .cert-card.in-progress:hover { border-color: rgba(129,140,248,0.4); }
@@ -765,13 +768,13 @@
   
       <div class="certs-grid">
   
-        <div class="cert-card">
+        <a class="cert-card" href="https://www.youtube.com" target="_blank" rel="noopener">
           <span class="cert-status">✓ Earned</span>
           <div class="cert-name">CompTIA A+</div>
           <div class="cert-issuer">CompTIA</div>
           <p class="cert-desc">Hardware, operating systems, networking basics, mobile devices, and troubleshooting.</p>
-          <p class="cert-meta">Earned: October 2026</p>
-        </div>
+          <p class="cert-meta">Earned: October 2026 · View credential →</p>
+        </a>
   
         <div class="cert-card in-progress">
           <span class="cert-status">In Progress</span>
