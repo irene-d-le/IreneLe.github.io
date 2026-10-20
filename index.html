@@ -38,6 +38,20 @@
       z-index: 999;
       opacity: 0.4;
     }
+    /* ── PROJECT VISUAL ── */
+    .terminal {
+      margin: -2rem -2rem 1.5rem;
+      padding: 1rem 1.25rem;
+      background: #0a0d12;
+      border-bottom: 1px solid var(--border);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      line-height: 1.6;
+      color: var(--muted);
+      overflow-x: auto;
+    }
+    .terminal .prompt { color: var(--accent); }
+    .terminal .hl { color: var(--accent2); }
 
     /* ── NAV ── */
     nav {
@@ -665,7 +679,15 @@
           <span class="project-link">View on GitHub →</span>
         </a>
 
+      
         <a class="project-card" href="https://github.com/irene-d-le" target="_blank">
+<pre class="terminal"><span class="prompt">$</span> sudo ./analyzer -i eth0
+<span class="hl">[live]</span> captured 1,284 packets
+
+TCP   ██████████████░░░░░░  72%
+UDP   ████░░░░░░░░░░░░░░░░  21%
+ICMP  █░░░░░░░░░░░░░░░░░░░   4%
+OTHER █░░░░░░░░░░░░░░░░░░░   3%</pre>
           <div class="project-tags">
             <span class="tag">C</span>
             <span class="tag">Socket Programming</span>
