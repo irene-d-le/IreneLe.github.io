@@ -452,6 +452,8 @@
       color: var(--muted);
       margin-top: 1rem;
     }
+    /* ── EDUCATION ── */
+    #education { background: var(--bg); }
 
     /* ── CONTACT ── */
     #contact { background: var(--surface); text-align: center; }
@@ -497,6 +499,33 @@
       .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
+    /* ── MOBILE NAV ── */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 1.2rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(12,15,20,0.97);
+        border-bottom: 1px solid var(--border);
+        padding: 0.5rem 1.5rem 1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 0.75rem 0; }
+    }
   </style>
 </head>
 <body>
@@ -505,12 +534,15 @@
   <nav>
     <a class="nav-logo" href="#hero">Irene Le</a>
     <ul class="nav-links">
+      <li><a href="#education">Education</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#certs">Certifications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certs">Certs</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   </nav>
 
   <!-- HERO -->
@@ -580,10 +612,43 @@
 
   <div class="divider"></div>
 
+    <div class="divider"></div>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="max-w">
+      <p class="section-label">02 / Education</p>
+      <h2 class="section-title">Where I study</h2>
+
+      <div class="exp-item">
+        <div class="exp-date">Expected May 2027</div>
+        <div>
+          <div class="exp-title">B.S. in Computer Science</div>
+          <div class="exp-org">University of California, Santa Cruz</div>
+          <ul class="exp-bullets">
+            <li>Relevant coursework: [add your courses, e.g. Data Structures, Operating Systems, Computer Networks]</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">[Start] – [Expected]</div>
+        <div>
+          <div class="exp-title">A.S. in CyberDefense</div>
+          <div class="exp-org">Saddleback College</div>
+          <ul class="exp-bullets">
+            <li>Relevant coursework: [add your courses]</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- PROJECTS -->
   <section id="projects">
     <div class="max-w">
-      <p class="section-label">02 / Projects</p>
+      <p class="section-label">03 / Projects</p>
       <h2 class="section-title">Things I've built</h2>
       <p class="section-sub">A mix of systems projects and data work. Source code on GitHub.</p>
 
@@ -655,7 +720,7 @@
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="max-w">
-      <p class="section-label">03 / Experience</p>
+      <p class="section-label">04 / Experience</p>
       <h2 class="section-title">Where I've worked</h2>
 
       <div class="exp-item">
@@ -717,7 +782,7 @@
   <!-- SKILLS -->
   <section id="skills">
     <div class="max-w">
-      <p class="section-label">04 / Skills</p>
+      <p class="section-label">05 / Skills</p>
       <h2 class="section-title">What I work with</h2>
       <p class="section-sub">My current toolkit - always learning. </p>
       <div class="skills-grid">
@@ -762,7 +827,7 @@
 <!-- CERTIFICATIONS -->
   <section id="certs">
     <div class="max-w">
-      <p class="section-label">05 / Certifications</p>
+      <p class="section-label">06 / Certifications</p>
       <h2 class="section-title">Credentials</h2>
       <p class="section-sub">Industry certifications I've earned and the ones I'm working toward.</p>
   
@@ -808,7 +873,7 @@
   <section id="contact">
     <div class="max-w">
       <div class="contact-card">
-        <p class="section-label" style="text-align:center">06 / Contact</p>
+        <p class="section-label" style="text-align:center">07 / Contact</p>
         <h2 class="section-title">Let's connect</h2>
         <p style="color:var(--muted); font-weight:300; margin-top:0.5rem;">
           I'm actively looking for SWE internships and new grad roles. If you're hiring or want to chat, feel free to reach out.
@@ -827,7 +892,18 @@
   <footer>
     <span>© 2026 Irene Le</span>
   </footer>
-
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+  </script>
 </body>
 </html>
 
